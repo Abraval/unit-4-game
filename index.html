@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystals Collector</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row py-3">
+            <div class="col-5 border-0 rounded shadow my-1 bg-info text-white py-1 mx-auto text-center">
+                <h1>Crystals Collector!</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center py-3">
+            <div class="col-9 border rounded shadow bg-light bg-transparent text-dark py-1 text-left font-weight-bold">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to
+                    your total score.</p>
+                <p>You win the game by matching your total score to random number, you lose the game if your total score
+                    goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center py-1">
+            <div class="col-3 border-0 rounded shadow mr-2 bg-info text-white py-2 text-left">
+                <h6>Random Number: <span id="randomNum"></span></h6>
+            </div>
+            <div class="col-3 border-0 rounded shadow mr-2 bg-info text-white py-1 text-left">
+                <h6>Your score: <span id="scores"></span></h6>
+            </div>
+            <div class="col-3 border-0 rounded shadow mr-2 bg-warning text-white py-1 text-left">
+                <h6>Wins: <span id="wins"></span></h6>
+                <h6>Loses: <span id="wins"></span></h6>
+            </div>
+        </div>
+        <div class="row justify-content-center py-1">
+            <div class="col-2 ml-2 mr-2" id="crys1">
+                <img src="assets/css/img/1.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 1">
+            </div>
+            <div class="col-2 mr-2" id="crys2">
+                <img src="assets/css/img/2.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 2">
+            </div>
+            <div class="col-2 mr-2" id="crys3">
+                <img src="assets/css/img/3.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 3">
+            </div>
+            <div class="col-2" id="crys4">
+                <img src="assets/css/img/4.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 4">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
