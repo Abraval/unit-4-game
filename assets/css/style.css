@@ -3,7 +3,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     }
-.ins {
-    background-color: antiquewhite;
+   #instruction {
+    background-color: rgba(250, 235, 215, 0.46);
+
     
 }

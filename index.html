@@ -17,11 +17,13 @@
             </div>
         </div>
         <div class="row justify-content-center py-3">
-            <div class="col-9 border rounded shadow bg-light bg-transparent text-dark py-1 text-left font-weight-bold">
+            <div class="col-9 border rounded shadow bg-light text-dark py-1 text-left font-weight-bold"
+                id="instruction">
                 <p>You will be given a random number at the start of the game.</p>
                 <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to
                     your total score.</p>
-                <p>You win the game by matching your total score to random number, you lose the game if your total score
+                <p>You win the game by matching your total score to the random number, you lose the game if your total
+                    score
                     goes above the random number.</p>
                 <p>The value of each crystal is hidden from you until you click on it.</p>
                 <p>Each time when the game starts, the game will change the values of each crystal.</p>
@@ -36,25 +38,80 @@
             </div>
             <div class="col-3 border-0 rounded shadow mr-2 bg-warning text-white py-1 text-left">
                 <h6>Wins: <span id="wins"></span></h6>
-                <h6>Loses: <span id="wins"></span></h6>
+                <h6>Losses: <span id="losses"></span></h6>
             </div>
         </div>
         <div class="row justify-content-center py-1">
-            <div class="col-2 ml-2 mr-2" id="crys1">
-                <img src="assets/css/img/1.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 1">
+            <div class="col-2 ml-2 mr-2">
+                <button id="crys1" class="btn btn-info crystal">
+                    <img src="assets/css/img/1.jpg" class="img-fluid img-thumbnail" id="crys1"
+                        alt="Picture of crystal 1">
+                </button>
             </div>
-            <div class="col-2 mr-2" id="crys2">
-                <img src="assets/css/img/2.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 2">
+            <div class="col-2 mr-2">
+                <button id="crys2" class="btn btn-primary crystal">
+                    <img src="assets/css/img/2.jpg" class="img-fluid img-thumbnail" id="crys1"
+                        alt="Picture of crystal 2">
+                </button>
             </div>
-            <div class="col-2 mr-2" id="crys3">
-                <img src="assets/css/img/3.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 3">
-            </div>
-            <div class="col-2" id="crys4">
-                <img src="assets/css/img/4.jpg" class="img-fluid img-thumbnail" id="crys1" alt="Picture of crystal 4">
 
+            <div class="col-2 mr-2">
+                <button id="cryst3" class="btn btn-success crystal">
+                    <img src="assets/css/img/3.jpg" class="img-fluid img-thumbnail" id="crys1"
+                        alt="Picture of crystal 3">
+                </button>
+            </div>
+            <div class="col-2">
+                <button id="crys4" class="btn btn-danger crystal">
+                    <img src="assets/css/img/4.jpg" class="img-fluid img-thumbnail" id="crys1"
+                        alt="Picture of crystal 4">
+                </button>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        var targetNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+        $("#randomNum").text(targetNumber);
+
+        var counter = 0;
+        $("#scores").text(counter);
+
+        var wins = 0;
+        $("#wins").text(wins);
+
+        var losses = 0;
+        $("#losses").text(losses);
+
+
+
+        $(".crystal").on("click", function () {
+
+            var crystalValue = Math.floor(Math.random() * 13);
+           
+            counter += crystalValue;
+            $("#scores").text(counter);
+            
+
+            if (counter === targetNumber) {
+                alert("You win!");
+                wins++;
+                $("#wins").text(wins);
+
+            }else if (counter >= targetNumber) {
+                alert("You lose!!");
+                losses++;
+                $("#losses").text(losses);
+            }
+
+        });
+
+
+
+    </script>
+
+
 </body>
 
 </html>
